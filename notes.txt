@@ -14,8 +14,21 @@ serviço Web;
 1 - @RestController: Indica que a classe é um recurso Web implementado por um controlador Rest;
 2 - @RequestMapping: Dá um nome para o recurso;
 3 - @GetMapping: Indica que a requisição retorna uma requisição do tipo get do HTTP;
+4 - @Configuration: Indica que a classe que possui essa notation é uma classe de configuração;
+5 - @Profile("user"): Indica a qual perfil será aplicado a configuração;
+6 - @Autowired: Cria uma dependência com o atributo definido abaixo dessa notation e associa
+uma instância;
+
+- Implements:
+1 - CommandLineRunner: Executo o código automáticamente após a aplicação subir e o contexto
+do Spring estar totalmente inicializado;
+
 
 - Spring Framework Types:
 1 - ResponseEntity<Class Type>: É um tipo específico para retornar respostas de requisições Web.
 1.1 - .ok: retorna a resposta com sucesso no HTTP;
 1.2 - .body(obj): Retorna o corpo da resposta com o objeto indicado;
+2 - JpaRepository<Class, TypeId>: Cria um objeto repository do pacote JPA com uma implementação
+padrão para o tipo definido;
+
+- Class para configuração de perfil: classe auxiliar que faz algumas configurações na aplicação.
