@@ -1,0 +1,21 @@
+- Spring Initializr: Ferramenta web oficial do Spring para iniciar um projeto Spring e adicionar dependências.
+
+- Dependências importantes:
+1 - Spring Web: Concentra-se na criação de serviços Web orientados a documentos. O objetivo do Spring Web Services
+é facilitar o desenvolvimento de serviços SOAP com abordagem "contrato-primeiro", permitindo a criação de serviços
+Web flexívesi utilizando uma das diversas maneiras de manipular payloads XML. O produto é baseado no próprio
+Spring, o que significa que você pode usar os conceitos do Spring, como injeção de dependência, como parte integrante do seu
+serviço Web;
+2 - H2 Database: É um banco de dados utilizado para testes;
+3 - Spring Data JPA: Faz o mapeamento objeto-relacional;
+4 - PostreSQL Driver: Driver do banco de dados PostreSQL;
+
+- Notations:
+1 - @RestController: Indica que a classe é um recurso Web implementado por um controlador Rest;
+2 - @RequestMapping: Dá um nome para o recurso;
+3 - @GetMapping: Indica que a requisição retorna uma requisição do tipo get do HTTP;
+
+- Spring Framework Types:
+1 - ResponseEntity<Class Type>: É um tipo específico para retornar respostas de requisições Web.
+1.1 - .ok: retorna a resposta com sucesso no HTTP;
+1.2 - .body(obj): Retorna o corpo da resposta com o objeto indicado;
