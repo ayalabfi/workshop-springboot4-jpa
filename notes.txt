@@ -22,6 +22,13 @@ uma instância;
 8 - @Repository: Registra a classe como um repositório;
 9 - @Service: Registra a classe como um serviço;
 10- @PathVariable: Captura valores da URL e os passa como parâmetros para o método;
+11- @ManyToOne: Indica que serão muitos para um, ou seja, faz sentido inserir essa
+notation em uma tabela pedidos no atributo que relaciona um cliente;
+12- @JoinColumn(name = "chave estrangeira"): Define qual coluna faz a ligação entre as duas
+tabelas de um relacionamento;
+13- @ManyToOne(mappedBy = "atribute"): Indica que será um para muitos, ou seja, faz sentido
+inserir essa notation em uma tabela cliente no atributo que relaciona os pedidos, o mappedBy
+indica qual o atributo na outra tabela faz relação com a tabela de inserção da notation.
 
 
 - Implements:
@@ -43,3 +50,5 @@ pode ser vazio;
 
 
 - Class para configuração de perfil: classe auxiliar que faz algumas configurações na aplicação.
+
+- ISO 8601: Representação de datas por meio de texto;
