@@ -29,6 +29,8 @@ tabelas de um relacionamento;
 13- @ManyToOne(mappedBy = "atribute"): Indica que será um para muitos, ou seja, faz sentido
 inserir essa notation em uma tabela cliente no atributo que relaciona os pedidos, o mappedBy
 indica qual o atributo na outra tabela faz relação com a tabela de inserção da notation.
+14- @JsonIgnore: Faz com que o Json ignore um chamado, isso é usado para evitar loops por
+exemplo entre cliente trazendo os dados dos pedidos e os pedidos trazendo os dados do cliente
 
 
 - Implements:
@@ -52,3 +54,10 @@ pode ser vazio;
 - Class para configuração de perfil: classe auxiliar que faz algumas configurações na aplicação.
 
 - ISO 8601: Representação de datas por meio de texto;
+1 - Padrão: 2026-05-22T10:47:33Z;
+1.1 - Detalhamento: ano-mes-diaT(Time)hora-minuto-segundoZ(Indica que o horário está em
+UTC (Tempo universal coordenado))
+
+- Quando você tem uma associação para muitos, o JPA não carrega essa associação para muitos,
+isso acontece para não estourar a memória e o trafego do computador, fazendo o Lazy Loading,
+ou seja, apenas se você acionar os objetos do lado para muitos.
