@@ -18,6 +18,11 @@ serviço Web;
 5 - @Profile("user"): Indica a qual perfil será aplicado a configuração;
 6 - @Autowired: Cria uma dependência com o atributo definido abaixo dessa notation e associa
 uma instância;
+7 - @Component: Registra a classe como componente do Spring;
+8 - @Repository: Registra a classe como um repositório;
+9 - @Service: Registra a classe como um serviço;
+10- @PathVariable: Captura valores da URL e os passa como parâmetros para o método;
+
 
 - Implements:
 1 - CommandLineRunner: Executo o código automáticamente após a aplicação subir e o contexto
@@ -30,5 +35,11 @@ do Spring estar totalmente inicializado;
 1.2 - .body(obj): Retorna o corpo da resposta com o objeto indicado;
 2 - JpaRepository<Class, TypeId>: Cria um objeto repository do pacote JPA com uma implementação
 padrão para o tipo definido;
+
+- Classes de conecimento atual:
+1 - Optional<T>: É uma classe utilizada para representar um valor que pode ou não existir,
+Serve principalmente para evitar NullPointerException e deixar explícito quando um retorno
+pode ser vazio;
+
 
 - Class para configuração de perfil: classe auxiliar que faz algumas configurações na aplicação.
