@@ -1,5 +1,6 @@
 package com.educandoweb.course.entities;
 
+import com.educandoweb.course.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -21,14 +22,19 @@ public class Order implements Serializable {
             timezone = "GMT")
     private Instant moment;
 
+    // Declara o orderStatus por meio do seu código
+    private Integer orderStatus;
+
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
     Order(){}
 
-    public Order(Long id, Instant moment, User client) {
+    public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
         this.id = id;
         this.moment = moment;
+        // Define o order status, sendo utilizado pela sua nomenclatura no construtor e o converte em código do tipo Integer
+        setOrderStatus(orderStatus);
         this.client = client;
     }
 
@@ -46,6 +52,16 @@ public class Order implements Serializable {
 
     public void setMoment(Instant moment) {
         this.moment = moment;
+    }
+
+    // Retorna o valor em inteiro do OrderStatus descrito
+    public OrderStatus getOrderStatus() {
+        return OrderStatus.valueOf(orderStatus);
+    }
+
+    // Pega o orderStatus pelo seu nome e o converte em Integer para inserir no banco de dados
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus.getCode();
     }
 
     public User getClient() {
