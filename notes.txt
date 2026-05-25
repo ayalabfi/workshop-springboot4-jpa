@@ -37,6 +37,12 @@ em uma tabela produto no atributo que relaciona categorias, pois um produto pode
 categorias e uma categoria pode ter vários produtos;
 17- @JoinTable: Cria uma nova tabela, ideal para quando é necessário fazer uma relação entre 2
 tabelas, como no caso onde é necessário criar um @ManyToMany;
+18- @Embeddable: Serve para criar um objeto que não vira uma tabela própria, mas pode ser incorporado
+dentro de outra entidade, comumente usada para representar grupos de campos relacionados, objetos de valor
+e composição de atributos, utilizando o @Embeddable, os campos da classe são "Embutidos" na tabela da
+entidade principal.
+19- @EmbeddedId: É usada para definir uma chave primária composta usando uma classe incorporável (@Embeddable);
+
 
 
 - Implements:
