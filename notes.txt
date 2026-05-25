@@ -32,6 +32,12 @@ indica qual o atributo na outra tabela faz relação com a tabela de inserção 
 14- @JsonIgnore: Faz com que o Json ignore um chamado, isso é usado para evitar loops por
 exemplo entre cliente trazendo os dados dos pedidos e os pedidos trazendo os dados do cliente;
 15- @Transient: Evita que o JPA tente interpretar;
+16- @ManyToMany: Indica que será muitos para muitos, ou seja, faz sentido inserir essa natation
+em uma tabela produto no atributo que relaciona categorias, pois um produto pode ter várias
+categorias e uma categoria pode ter vários produtos;
+17- @JoinTable: Cria uma nova tabela, ideal para quando é necessário fazer uma relação entre 2
+tabelas, como no caso onde é necessário criar um @ManyToMany;
+
 
 - Implements:
 1 - CommandLineRunner: Executo o código automáticamente após a aplicação subir e o contexto
