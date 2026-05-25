@@ -32,7 +32,7 @@ indica qual o atributo na outra tabela faz relação com a tabela de inserção 
 14- @JsonIgnore: Faz com que o Json ignore um chamado, isso é usado para evitar loops por
 exemplo entre cliente trazendo os dados dos pedidos e os pedidos trazendo os dados do cliente;
 15- @Transient: Evita que o JPA tente interpretar;
-16- @ManyToMany: Indica que será muitos para muitos, ou seja, faz sentido inserir essa natation
+16- @ManyToMany: Indica que será muitos para muitos, ou seja, faz sentido inserir essa notation
 em uma tabela produto no atributo que relaciona categorias, pois um produto pode ter várias
 categorias e uma categoria pode ter vários produtos;
 17- @JoinTable: Cria uma nova tabela, ideal para quando é necessário fazer uma relação entre 2
@@ -42,6 +42,11 @@ dentro de outra entidade, comumente usada para representar grupos de campos rela
 e composição de atributos, utilizando o @Embeddable, os campos da classe são "Embutidos" na tabela da
 entidade principal.
 19- @EmbeddedId: É usada para definir uma chave primária composta usando uma classe incorporável (@Embeddable);
+20- @OneToOne: Indica que será um para um, ou seja, faz sentido inserir essa notation em uma tabela
+pedido e pagamento, pois um pedido pode ou não ter um único pagamento;
+20.1- @OneToOne(mappedBy = "atributo", cascade = CascadeType.ALL): Faz com que as duas entidades tenham o mesmo Id;
+21- @MapsId: É uma notation usada para dizer que uma chave estrangeira também faz parte da chave primária da entidade;
+
 
 
 
@@ -75,3 +80,9 @@ isso acontece para não estourar a memória e o trafego do computador, fazendo o
 ou seja, apenas se você acionar os objetos do lado para muitos.
 
 - Set e HashSet: São usados para armazenar coleções de elementos sem permitir duplicatas.
+
+- Para fazer o fechamento de uma chamada que utiliza o @OneToOne e Cascade (compartilha o mesmo Id),
+é necessário fazer a associação de mão dupla em memória, por exemplo, pra um pedido que está recebendo
+um pagamento, primeiro é necessário gerar o objeto da classe pagamento e após isso chamar o método da
+classe pedido para definir o pagamento (ex.: o1.setPayment(pay1)), e após isso o JPA irá salvar ao chamar
+a função save do repository de pedidos.
