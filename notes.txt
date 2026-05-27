@@ -46,6 +46,9 @@ entidade principal.
 pedido e pagamento, pois um pedido pode ou não ter um único pagamento;
 20.1- @OneToOne(mappedBy = "atributo", cascade = CascadeType.ALL): Faz com que as duas entidades tenham o mesmo Id;
 21- @MapsId: É uma notation usada para dizer que uma chave estrangeira também faz parte da chave primária da entidade;
+22- @PostMapping: Recebe o método Post do HTTP, utilizado para fazer o insert;
+23- @RequestBody: Mapeia o JSON do corpo da requisição para um objeto Java automáticamente, usando o mecanismo
+de conversão do Spring, comumente usado com @PostMapping, @PutMapping e @PatchMapping;
 
 
 
