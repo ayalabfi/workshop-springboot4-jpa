@@ -48,4 +48,17 @@ public class UserResource {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).body(obj);
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
+        /* Retorna uma resposta HTTP 204 (no content), indicando sucesso sem corpo de resposta
+        ideal para operações Delete ou atualizações que não precisam retornar dados.
+        de forma mais completa, segue o Breakdown:
+        1 - RespondeEntity: Classe do Spring para construir respostas HTTP completas;
+        2 - .noContent(): Define o status HTTP como 204 (No content);
+        3 - .build(): Constrói o objeto ResponseEntity (sem corpo).
+         */
+        return ResponseEntity.noContent().build();
+    }
 }
