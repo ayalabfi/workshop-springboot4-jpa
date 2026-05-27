@@ -51,6 +51,8 @@ pedido e pagamento, pois um pedido pode ou não ter um único pagamento;
 de conversão do Spring, comumente usado com @PostMapping, @PutMapping e @PatchMapping;
 24- @DeleteMapping: mapeia requisições HTTP DELETE, para métodos que excluem recursos;
 25- @PathVariable: extrai valores dinâmicos da URI e os injeta como parâmetro do método;
+26- @PutMapping: Mapeia requisições HTTP PUT para métodos que atualizam/substituem completamente
+recursos existentes;
 
 
 
