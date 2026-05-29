@@ -53,6 +53,11 @@ de conversão do Spring, comumente usado com @PostMapping, @PutMapping e @PatchM
 25- @PathVariable: extrai valores dinâmicos da URI e os injeta como parâmetro do método;
 26- @PutMapping: Mapeia requisições HTTP PUT para métodos que atualizam/substituem completamente
 recursos existentes;
+27- @ControllerAdvice: Permite centralizar tratamentos globais para todos os controllers, principalmente
+para tratamento de exceções, garantindo código mais limpo, organizado e padronizado;
+28- @ExceptionHandler(exceptionPersonalizada.class): É um interceptador, ele captura uma exceção específica
+quando ela ocorre e permite que você retorne uma resposta HTTP amigável e padronizada para o cliente, ao invés
+de deixar a aplicação quebrar;
 
 
 
@@ -68,6 +73,8 @@ do Spring estar totalmente inicializado;
 1.2 - .body(obj): Retorna o corpo da resposta com o objeto indicado;
 2 - JpaRepository<Class, TypeId>: Cria um objeto repository do pacote JPA com uma implementação
 padrão para o tipo definido;
+3 - orElseThrow: Função utilizada em um return para caso o get não prossiga por algum erro, retornar
+uma exceção personalizada
 
 - Classes de conecimento atual:
 1 - Optional<T>: É uma classe utilizada para representar um valor que pode ou não existir,
