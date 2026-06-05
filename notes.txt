@@ -100,3 +100,13 @@ ou seja, apenas se você acionar os objetos do lado para muitos.
 um pagamento, primeiro é necessário gerar o objeto da classe pagamento e após isso chamar o método da
 classe pedido para definir o pagamento (ex.: o1.setPayment(pay1)), e após isso o JPA irá salvar ao chamar
 a função save do repository de pedidos.
+
+- Desmembramento do Database URL:
+
+URL:
+postgresql://course_javasb_5uiv_user:aNsrHDzh2TAKlTjpmcxIc9PM6txtZcEw@dpg-d8g7ol58nd3s739b1oqg-a.ohio-postgres.render.com/course_javasb_5uiv
+User: course_javasb_5uiv_user
+Password: aNsrHDzh2TAKlTjpmcxIc9PM6txtZcEw
+Host name: a.ohio-postgres.render.com
+Port: 5432
+database name: course_javasb_5uiv
